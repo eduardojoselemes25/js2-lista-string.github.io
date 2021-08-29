@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-01</title>
+    <script type="text/javascript">
+        let nome = "";
+        while (nome == null || nome == ("")) {
+            nome = prompt("Informe seu primeiro nome: ");
+            nome = nome.trim();
+            if (nome == null || nome == ("")) {
+                alert(
+                    "É necessário digitar a seu primeiro nome e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                );
+            }
+        }
+        let sobrenome = "";
+        while (sobrenome == null || sobrenome == ("")) {
+            sobrenome = prompt("Informe o seu sobrenome: ");
+            sobrenome = sobrenome.trim();
+            if (sobrenome == null || sobrenome == ("")) {
+                alert(
+                    "É necessário digitar o seu sobrenome e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                );
+            }
+        }
+        let quant = "";
+        while (quant == null || quant == ("")) {
+            quant = prompt("Informe um valor: ");
+            quant = quant.trim();
+            if (quant == null || quant == ("")) {
+                alert(
+                    "É necessário digitar um valor e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                );
+            }
+        }
+        let cor = "";
+        while (cor == null || cor == ("")) {
+            cor = prompt("Informe uma cor. OBS: a cor devera ser fornecida com o nome em inglês:");
+            cor = cor.trim();
+            if (cor == null || cor == ("")) {
+                alert(
+                    "É necessario digitar um cor e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                );
+            }
+        }
+        for (i = 1; i <= quant; i++) {
+            if (i % 2 == 0) {
+                document.write(`<p>${i} - ${nome.fontcolor(`${cor}`)} ${sobrenome.fontcolor(`${cor}`)}</p>`);
+            } else {
+                document.write(`<p>${i} - ${nome} ${sobrenome}</p>`);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-11</title>
+    <script>
+        let texto = "";
+        while (texto == null || texto == ("")) {
+            texto = prompt("Informe um texto: ");
+            texto = texto.trim();
+            if (texto == null || texto == ("")) {
+                alert(
+                    "É necessário digitar um texto qualquer e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                );
+            }
+        }
+        let primeira = "";
+        while (primeira == null || primeira == ("")) {
+            primeira = prompt("Informe a primeira palavra: ");
+            primeira = primeira.trim();
+            if (primeira == null || primeira == ("")) {
+                alert(
+                    "É necessário digitar a primeira palavra e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                    );
+            }
+        }
+        let segunda = "";
+        while (segunda == null || segunda == ("")) {
+            segunda = prompt("Informe a segunda palavra: ");
+            segunda = segunda.trim();
+            if (segunda == null || segunda == ("")) {
+                alert(
+                    "É necessário digitar a segunda palavra e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                );
+            }
+        }
+        let result = texto.replace(primeira, segunda);
+        alert(`Mensagem final: \n${result}`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
