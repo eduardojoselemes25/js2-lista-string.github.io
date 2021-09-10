@@ -6,21 +6,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio-04</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
     <script>
-        let nome = "";
-        while (nome == null || nome == ("")) {
-            nome = prompt("Informe seu nome completo: ");
-            nome = nome.trim();
-            if (nome == null || nome == ("")) {
+        let quantPassageiros = "";
+        while (quantPassageiros == null || quantPassageiros == ("")) {
+            quantPassageiros = prompt("Digite a quantidade de passageiros:");
+            quantPassageiros = quantPassageiros.trim();
+            if (quantPassageiros == null || quantPassageiros == ("")) {
                 alert(
-                    "É necessário digitar a seu nome completo e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                    "É necessário digitar um numero de passageiros e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
                 );
             }
         }
-        nomeSplit = nome.split(" ");
-        primeiroNome = nomeSplit[0].toUpperCase();
-        nomeSplit.shift();
-        alert(`${primeiroNome} ${nomeSplit.join(" ").toLowerCase()}`);
+
+        let masculinos = [];
+        let femininos = [];
+
+        for (i = 0; i < quantPassageiros; i++) {
+            let nome = "";
+            while (nome == null || nome == ("")) {
+                nome = prompt(`Qual o Nome do passageiro(a) ${i+1}:`);
+                nome = nome.trim();
+                if (nome == null || nome == ("")) {
+                    alert(
+                        "É necessário digitar o nome do passageriro e pressionar 'ok' para continuar. Pressione(F5) e tente novamente"
+                    );
+                }
+            }
+
+            let sexo = "";
+            while (sexo == null || sexo == ("") || (sexo != "M" && sexo != "F")) {
+                sexo = prompt(`Qual é o seu sexo ${i+1}?(M ou F):`);
+                sexo = sexo.trim().toUpperCase();
+                if (sexo == null || sexo == ("") || (sexo != "M" && sexo != "F")) {
+                    alert("É necessário digitar o sexo (M ou F). Pressione(F5) e tente novamente");
+                }
+            }
+
+            (sexo.trim() === 'M') ? masculinos.push(nome): femininos.push(nome);
+        }
+
+        masculinos.sort();
+        femininos.sort();
+
+        document.write(`<div class="box"><table><tr>
+            <th>Femininos</th>
+            <th>Masculinos</th>
+        </tr>`);
+        for (i = 0; i < quantPassageiros; i++) {
+            document.write("<tr>");
+            if (femininos[i] != null) {
+                document.write("<td>" + femininos[i] + "</td>");
+            } else {
+                document.write("<td> </td>");
+            }
+
+            if (masculinos[i] != null) {
+                document.write("<td>" + masculinos[i] + "</td>");
+            } else {
+                document.write("<td> </td>");
+            }
+
+            document.write("</tr>");
+        }
+        document.write(`</table></div>`);
     </script>
 </head>
 

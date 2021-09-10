@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio-01</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+    </style>
+    <script>
+        let dias = ["Hoje é domingo", "Hoje é segunda-feira", "Hoje é terça-feira", "Hoje é quarta-feira",
+            "Hoje é quinta-feira", "Hoje é sexta-feira", "Hoje é sábado"
+        ];
+        let dia = "";
+        switch (new Date().getDay()) {
+            case 0:
+                dia = dias[0];
+                break;
+            case 1:
+                dia = dias[1];
+                break;
+            case 2:
+                dia = dias[2];
+                break;
+            case 3:
+                dia = dias[3];
+                break;
+            case 4:
+                dia = dias[4];
+                break;
+            case 5:
+                dia = dias[5];
+                break;
+            case 6:
+                dia = dias[6];
+                break;
+        }
+        document.write(`<h2>${dia}</h2>`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
